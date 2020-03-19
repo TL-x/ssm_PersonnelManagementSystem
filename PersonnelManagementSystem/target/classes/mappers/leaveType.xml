@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csqf.personnelmanagementsys.mapper.ILeaveTypeDao">
+    
+    <sql id="selectAll">
+        select * from t_user_leave_type
+    </sql>
+    
+   <select id="getAllLeaveType" resultType="leaveType">
+       <include refid="selectAll"/>
+   </select>
+
+    <select id="getLeaveTypeByPKId" resultType="leaveType">
+        <include refid="selectAll"/> where pk_ltid = #{ltid}
+    </select>
+
+</mapper>

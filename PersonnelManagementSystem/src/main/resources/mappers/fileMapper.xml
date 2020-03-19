@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.csqf.personnelmanagementsys.mapper.IFileDaotDao">
+
+    <sql id="selectAll">
+        select * from t_user_file
+    </sql>
+
+    <resultMap id="fileMap" type="myFile" >
+        <id column="pk_fid" property="fid" />
+        <association column="fk_uid" property="user" select="com.csqf.personnelmanagementsys.mapper.IUserDao.getUserByPKId" />
+    </resultMap>
+
+    <select id="getAllFile" resultMap="fileMap">
+        <include refid="selectAll"/>
+    </select>
+
+    <select id="getFileByPKId" resultMap="fileMap">
+        <include refid="selectAll"/> where pk_fid = #{fid}
+    </select>
+
+</mapper>

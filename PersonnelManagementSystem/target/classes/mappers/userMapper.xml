@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.csqf.personnelmanagementsys.mapper.IUserDao">
+    
+    <sql id="selectAll">
+        select * from t_user_information
+    </sql>
+    
+    <resultMap id="userMap" type="user">
+        <id column="pk_uid" property="uid" />
+        <association column="fk_eid" property="employee" select="com.csqf.personnelmanagementsys.mapper.IEmployeeDao.getEmployeeByPKId" />
+    </resultMap>
+    
+    <select id="getAllUser" resultMap="userMap">
+        <include refid="selectAll"/>
+    </select>
+    
+    <select id="getUserByPKId" resultMap="userMap">
+       <include refid="selectAll"/> where pk_uid = #{uid}
+    </select>
+
+    <select id="getUserByUser" resultMap="userMap">
+        <include refid="selectAll"/>where username = #{username} and password = #{password}
+    </select>
+</mapper>

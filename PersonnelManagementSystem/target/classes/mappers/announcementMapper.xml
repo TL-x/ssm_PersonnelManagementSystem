@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.csqf.personnelmanagementsys.mapper.IAnnouncementDao">
+    <sql id="selectAll">
+        select * from t_user_ Announcement
+    </sql>
+<!--    查询所有公告-->
+    <select id="getAllAnnouncement" resultMap="announcementMap">
+       <include refid="selectAll"/>
+    </select>
+
+
+
+    <resultMap id="announcementMap" type="announcement">
+        <id column="pk_anid" property="anid" />
+        <result column="name" property="name" />
+        <result column="details" property="details" />
+        <result column="crtTime" property="crtTime" />
+        <association property="user" column="fk_uid" select="com.csqf.personnelmanagementsys.mapper.IUserDao.getUserByPKId" />
+    </resultMap>
+</mapper>
