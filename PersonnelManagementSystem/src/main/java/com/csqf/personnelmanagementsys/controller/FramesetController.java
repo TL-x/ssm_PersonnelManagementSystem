@@ -28,7 +28,7 @@ public class FramesetController {
 
     @RequestMapping("/top")
     public String top(){
-        return "frameset/top.html";
+        return "top.jsp";
     }
 
     @RequestMapping("/address")

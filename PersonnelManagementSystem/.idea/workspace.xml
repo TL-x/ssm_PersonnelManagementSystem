@@ -12,13 +12,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d_PersonnelManagementSystem@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d_PersonnelManagementSystem@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="d_PersonnelManagementSystem@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="d_PersonnelManagementSystem: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="spring-beans.schema" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,6 +79,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -56,8 +87,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.13085938" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="spring" />
+    <property name="project.structure.side.proportion" value="0.4548652" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -139,6 +170,15 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:d_PersonnelManagementSystem@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:d_PersonnelManagementSystem@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@77b50c7f" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
             </expand>
             <select />
           </treeState>
@@ -160,7 +200,8 @@
       <option name="presentableId" value="Default" />
       <updated>1584188443652</updated>
       <workItem from="1584188447767" duration="31473000" />
-      <workItem from="1584529244629" duration="23718000" />
+      <workItem from="1584529244629" duration="28111000" />
+      <workItem from="1584673654654" duration="4547000" />
     </task>
     <servers />
   </component>
@@ -172,30 +213,34 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="192" key="#Project_Structure/0.0.1680.1050@0.0.1680.1050" timestamp="1584195089754" />
+    <state x="440" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584674708914">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="440" y="192" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1584674708914" />
     <state x="562" y="335" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584542781997">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="562" y="335" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1584542781997" />
-    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1584597669234">
+    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser" timestamp="1584628703611">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1584597669234" />
-    <state width="1638" height="369" key="GridCell.Tab.0.bottom" timestamp="1584604761712">
+    <state x="653" y="237" key="#com.intellij.ide.util.MemberChooser/0.0.1680.1050@0.0.1680.1050" timestamp="1584628703611" />
+    <state width="1638" height="301" key="GridCell.Tab.0.bottom" timestamp="1584673473971">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="369" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1584604761712" />
-    <state width="1638" height="369" key="GridCell.Tab.0.center" timestamp="1584604761710">
+    <state width="1638" height="301" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1584673473971" />
+    <state width="1638" height="301" key="GridCell.Tab.0.center" timestamp="1584673473968">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="369" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1584604761710" />
-    <state width="1638" height="369" key="GridCell.Tab.0.left" timestamp="1584604761707">
+    <state width="1638" height="301" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1584673473968" />
+    <state width="1638" height="301" key="GridCell.Tab.0.left" timestamp="1584673473967">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="369" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1584604761707" />
-    <state width="1638" height="369" key="GridCell.Tab.0.right" timestamp="1584604761711">
+    <state width="1638" height="301" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1584673473967" />
+    <state width="1638" height="301" key="GridCell.Tab.0.right" timestamp="1584673473969">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="369" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1584604761711" />
+    <state width="1638" height="301" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1584673473969" />
     <state width="1126" height="295" key="GridCell.Tab.1.bottom" timestamp="1584528946874">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
@@ -228,18 +273,22 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1126" height="295" key="GridCell.Tab.2.right/0.0.1680.1050@0.0.1680.1050" timestamp="1584528946880" />
-    <state x="349" y="164" width="982" height="722" key="SettingsEditor" timestamp="1584529563408">
+    <state width="234" height="498" key="HiddenNamespacesPopup" timestamp="1584674688681">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="349" y="164" width="982" height="722" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1584529563408" />
-    <state x="496" y="359" key="com.intellij.ide.util.TipDialog" timestamp="1584529250538">
+    <state width="234" height="498" key="HiddenNamespacesPopup/0.0.1680.1050@0.0.1680.1050" timestamp="1584674688681" />
+    <state x="349" y="164" width="982" height="722" key="SettingsEditor" timestamp="1584674519032">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="496" y="359" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1584529250538" />
-    <state x="505" y="187" width="670" height="676" key="search.everywhere.popup" timestamp="1584596574171">
+    <state x="349" y="164" width="982" height="722" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1584674519032" />
+    <state x="1580" y="317" key="com.intellij.ide.util.TipDialog" timestamp="1584673777314">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="187" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1584596574171" />
+    <state x="1580" y="317" key="com.intellij.ide.util.TipDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1584673777314" />
+    <state x="505" y="187" width="670" height="676" key="search.everywhere.popup" timestamp="1584634094691">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="505" y="187" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1584634094691" />
     <state x="466" y="220" key="spring file set editor" timestamp="1584529559578">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

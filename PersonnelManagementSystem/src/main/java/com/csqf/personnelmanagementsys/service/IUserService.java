@@ -1,6 +1,9 @@
 package com.csqf.personnelmanagementsys.service;
 
 import com.csqf.personnelmanagementsys.pojo.User;
+import org.springframework.ui.Model;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * @author Xu
@@ -16,5 +19,12 @@ public interface IUserService {
      */
     User getUserByPKId(int pk_id);
 
-    User getUserByUser(User user);
+    /**
+     * 验证用户账号密码是否正确
+     * @param user
+     * @return
+     */
+    User verifyUser(User user);
+
+
 }

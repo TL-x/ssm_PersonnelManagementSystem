@@ -4,8 +4,10 @@ import com.csqf.personnelmanagementsys.mapper.IUserDao;
 import com.csqf.personnelmanagementsys.pojo.User;
 import com.csqf.personnelmanagementsys.service.IUserService;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 /**
  * @author Xu
@@ -25,8 +27,13 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User getUserByUser(User user) {
-
-        return userDao.getUserByUser(user);
+     public User verifyUser(User user){
+        User getUser = userDao.getUserByUser(user);
+        if (null != getUser){
+            return getUser;
+        }
+        return null;
     }
+
+
 }
