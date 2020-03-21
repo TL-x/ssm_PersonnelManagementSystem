@@ -30,8 +30,5 @@ public class FramesetController {
         return "frameset/top.jsp";
     }
 
-    @RequestMapping("/address")
-    public String addr(){
-        return "frameset/address.html";
-    }
+
 }

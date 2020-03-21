@@ -33,11 +33,11 @@
 <!--        <property name="cacheSeconds" value="120"></property>-->
 <!--    </bean>-->
 <!--    配置好其他页面在这里设置哪些页面需要拦截-->
-    <mvc:interceptors>
-        <mvc:interceptor>
+<!--    <mvc:interceptors>-->
+<!--        <mvc:interceptor>-->
 
-            <mvc:mapping path="/all"/>
-            <bean class="com.csqf.personnelmanagementsystem.interceptor.LoginInterceptor" />
-        </mvc:interceptor>
-    </mvc:interceptors>
+<!--            <mvc:mapping path="/all"/>-->
+<!--            <bean class="com.csqf.personnelmanagementsystem.interceptor.LoginInterceptor" />-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
 </beans>
