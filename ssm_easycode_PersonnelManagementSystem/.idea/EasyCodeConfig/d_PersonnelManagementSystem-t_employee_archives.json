@@ -44,14 +44,14 @@
     "custom" : false,
     "ext" : { }
   }, {
-    "name" : "native place",
+    "name" : "nativeplace",
     "comment" : null,
     "type" : null,
     "shortType" : null,
     "custom" : false,
     "ext" : { }
   }, {
-    "name" : "politics status",
+    "name" : "politicsstatus",
     "comment" : null,
     "type" : null,
     "shortType" : null,

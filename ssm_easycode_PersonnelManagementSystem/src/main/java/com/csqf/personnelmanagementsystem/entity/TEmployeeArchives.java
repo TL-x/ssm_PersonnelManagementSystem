@@ -6,10 +6,10 @@ import java.io.Serializable;
  * 员工档案(TEmployeeArchives)实体类
  *
  * @author makejava
- * @since 2020-03-21 16:16:53
+ * @since 2020-03-21 21:12:42
  */
 public class TEmployeeArchives implements Serializable {
-    private static final long serialVersionUID = -46751923089372531L;
+    private static final long serialVersionUID = -41963061673064579L;
     
     private Integer pkAid;
     
@@ -25,11 +25,11 @@ public class TEmployeeArchives implements Serializable {
     /**
     * 籍贯
     */
-    private String nativePlace;
+    private String nativeplace;
     /**
     * 政治面貌
     */
-    private String politicsStatus;
+    private String politicsstatus;
     
     private Integer tel;
     
@@ -108,20 +108,20 @@ public class TEmployeeArchives implements Serializable {
         this.idcard = idcard;
     }
 
-    public String getNativePlace() {
-        return nativePlace;
+    public String getNativeplace() {
+        return nativeplace;
     }
 
-    public void setNativePlace(String nativePlace) {
-        this.nativePlace = nativePlace;
+    public void setNativeplace(String nativeplace) {
+        this.nativeplace = nativeplace;
     }
 
-    public String getPoliticsStatus() {
-        return politicsStatus;
+    public String getPoliticsstatus() {
+        return politicsstatus;
     }
 
-    public void setPoliticsStatus(String politicsStatus) {
-        this.politicsStatus = politicsStatus;
+    public void setPoliticsstatus(String politicsstatus) {
+        this.politicsstatus = politicsstatus;
     }
 
     public Integer getTel() {

@@ -972,7 +972,7 @@
     </column>
     <column id="254" parent="237" name="sex">
       <Position>4</Position>
-      <DataType>varchar(20)|0s</DataType>
+      <DataType>char(2)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -987,14 +987,14 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="237" name="native place">
+    <column id="257" parent="237" name="nativePlace">
       <Position>7</Position>
       <Comment>籍贯</Comment>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="237" name="politics status">
+    <column id="258" parent="237" name="politicsStatus">
       <Position>8</Position>
       <Comment>政治面貌</Comment>
       <DataType>varchar(10)|0s</DataType>
