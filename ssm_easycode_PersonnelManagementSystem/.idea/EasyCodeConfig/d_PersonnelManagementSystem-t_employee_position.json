@@ -1,0 +1,38 @@
+{
+  "name" : "TEmployeePosition",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "pkPid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "name",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "saraly",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "fkDid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.csqf.personnelmanagementsystem",
+  "savePath" : "./src/main/java/com/csqf/personnelmanagementsystem",
+  "saveModelName" : "ssm_easycode_PersonnelManagementSystem"
+}

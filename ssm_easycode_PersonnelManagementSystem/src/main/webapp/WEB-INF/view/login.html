@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>登录页面</title>
+	</head>
+	<style>
+		
+		.backgroud{
+			/*border: 1px solid red;*/
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #DEE1E6;
+			/*background: url(img/bg.jpg) repeat scroll top left;*/
+			/*filter:blur(10px);*/
+		}
+/*	/*	/*
+		.backgroud::before{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 600px;
+			height: 300px;
+			background: url(img/bg.jpg) repeat scroll top left;
+			filter:blur(10px);
+			background-size: cover;
+		}*/
+		/*登录窗口样式*/
+		#login{
+			margin: auto ;
+			border: 1px solid green;
+			background-color: white;
+			position: relative;
+			width: 400px;
+			height: 400px;
+			top: 100px;
+			/*border-radius: 9px;*/
+		}
+		/*用户名 密码样式*/
+		.input{
+			margin-left: 50px;;
+			margin-top: 30px;
+			height:50px;
+			width: 300px;
+			font-size: 18px;
+			padding-left: 6px;
+		}
+		/*登录窗口 标题*/
+		.littetitle{
+			
+			font-size: 24px;
+			/*border: 1px red solid;*/
+			color: white;
+			background-color: #086A3B;
+			text-align: center;
+			line-height: 50px;
+		}
+		/*登录按钮*/
+		.loginbutton{
+			background-color: #086A3B;
+			border-radius: 9px; 
+			color: white;
+			margin-left: 50px;;
+			margin-top: 40px;
+			height:50px;
+			width: 300px;
+		}
+		/*单选框*/
+		.identitycss{
+			/*border: 1px solid red ;*/
+			margin-top: 30px;
+			padding-left: 20px;
+			margin-left: 80px;
+		}
+	</style>
+	<body>
+		<form action="/sign.sadsad"  method="post">
+		<!--背景-->
+		<div class="backgroud">
+			<!--登录窗口-->
+			<div id="login">
+				<div class="littetitle" >人事管理系统</div>
+				<input class="input" type="text" name="username" placeholder="用户名"/><br />
+				<input class="input"  type="password" name="password" placeholder="密码"/><br />
+				<!--身份选择-->
+<!--				<div class="identitycss">-->
+<!--				<input  type="radio"  name="identity" value="supermanager" />超级管理员-->
+<!--				<input   type="radio"  name="identity" value="employee" />员工<br />-->
+<!--				-->
+<!--				</div>-->
+				<!--登录按钮-->
+				<input class="loginbutton" type="submit" value="登录" />
+			</div>
+		</div>
+		</form>
+	</body>
+</html>

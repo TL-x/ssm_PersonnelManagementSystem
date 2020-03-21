@@ -1,0 +1,38 @@
+{
+  "name" : "TUserAttendanceTime",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "pkAttid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "name",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "start",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "end",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.csqf.personnelmanagementsystem",
+  "savePath" : "./src/main/java/com/csqf/personnelmanagementsystem",
+  "saveModelName" : "ssm_easycode_PersonnelManagementSystem"
+}

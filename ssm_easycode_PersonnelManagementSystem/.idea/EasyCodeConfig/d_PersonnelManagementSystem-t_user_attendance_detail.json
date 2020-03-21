@@ -1,0 +1,45 @@
+{
+  "name" : "TUserAttendanceDetail",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "pkAtdid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "fkSignoutid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "fkSigninid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "isleave",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "fkAtid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.csqf.personnelmanagementsystem",
+  "savePath" : "./src/main/java/com/csqf/personnelmanagementsystem",
+  "saveModelName" : "ssm_easycode_PersonnelManagementSystem"
+}

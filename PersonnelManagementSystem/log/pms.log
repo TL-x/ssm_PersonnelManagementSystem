@@ -1,3 +1,0 @@
-com.csqf.personnelmanagementsys.mapper.IUserDao.getUserByUser ==>  Preparing: select * from t_user_information where username = ? and password = ?  org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:139) 
-com.csqf.personnelmanagementsys.mapper.IUserDao.getUserByUser ==> Parameters: null, null org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:139) 
-com.csqf.personnelmanagementsys.mapper.IUserDao.getUserByUser <==      Total: 0 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:139) 

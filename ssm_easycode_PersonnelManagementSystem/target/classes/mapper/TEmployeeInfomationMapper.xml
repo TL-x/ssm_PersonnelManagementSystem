@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csqf.personnelmanagementsystem.dao.TEmployeeInfomationDao">
+
+    <resultMap type="com.csqf.personnelmanagementsystem.entity.TEmployeeInfomation" id="TEmployeeInfomationMap">
+        <result property="pkEid" column="pk_eid" jdbcType="INTEGER"/>
+        <result property="fkPid" column="fk_pid" jdbcType="INTEGER"/>
+        <result property="fkAid" column="fk_aid" jdbcType="INTEGER"/>
+        <result property="jointime" column="jointime" jdbcType="TIMESTAMP"/>
+        <result property="training" column="training" jdbcType="VARCHAR"/>
+        <result property="boss" column="boss" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TEmployeeInfomationMap">
+        select
+          pk_eid, fk_pid, fk_aid, jointime, training, boss
+        from d_PersonnelManagementSystem.t_employee_infomation
+        where pk_eid = #{pkEid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TEmployeeInfomationMap">
+        select
+          pk_eid, fk_pid, fk_aid, jointime, training, boss
+        from d_PersonnelManagementSystem.t_employee_infomation
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TEmployeeInfomationMap">
+        select
+          pk_eid, fk_pid, fk_aid, jointime, training, boss
+        from d_PersonnelManagementSystem.t_employee_infomation
+        <where>
+            <if test="pkEid != null">
+                and pk_eid = #{pkEid}
+            </if>
+            <if test="fkPid != null">
+                and fk_pid = #{fkPid}
+            </if>
+            <if test="fkAid != null">
+                and fk_aid = #{fkAid}
+            </if>
+            <if test="jointime != null">
+                and jointime = #{jointime}
+            </if>
+            <if test="training != null and training != ''">
+                and training = #{training}
+            </if>
+            <if test="boss != null">
+                and boss = #{boss}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="pkEid" useGeneratedKeys="true">
+        insert into d_PersonnelManagementSystem.t_employee_infomation(fk_pid, fk_aid, jointime, training, boss)
+        values (#{fkPid}, #{fkAid}, #{jointime}, #{training}, #{boss})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update d_PersonnelManagementSystem.t_employee_infomation
+        <set>
+            <if test="fkPid != null">
+                fk_pid = #{fkPid},
+            </if>
+            <if test="fkAid != null">
+                fk_aid = #{fkAid},
+            </if>
+            <if test="jointime != null">
+                jointime = #{jointime},
+            </if>
+            <if test="training != null and training != ''">
+                training = #{training},
+            </if>
+            <if test="boss != null">
+                boss = #{boss},
+            </if>
+        </set>
+        where pk_eid = #{pkEid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from d_PersonnelManagementSystem.t_employee_infomation where pk_eid = #{pkEid}
+    </delete>
+
+</mapper>

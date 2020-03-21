@@ -1,0 +1,45 @@
+{
+  "name" : "TUserAnnouncement",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "pkAnid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "name",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "details",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "crttime",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "fkUid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.csqf.personnelmanagementsystem",
+  "savePath" : "./src/main/java/com/csqf/personnelmanagementsystem",
+  "saveModelName" : "ssm_easycode_PersonnelManagementSystem"
+}

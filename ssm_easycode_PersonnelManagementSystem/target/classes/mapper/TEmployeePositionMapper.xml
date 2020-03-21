@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csqf.personnelmanagementsystem.dao.TEmployeePositionDao">
+
+    <resultMap type="com.csqf.personnelmanagementsystem.entity.TEmployeePosition" id="TEmployeePositionMap">
+        <result property="pkPid" column="pk_pid" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="saraly" column="saraly" jdbcType="OTHER"/>
+        <result property="fkDid" column="fk_did" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TEmployeePositionMap">
+        select
+          pk_pid, name, saraly, fk_did
+        from d_PersonnelManagementSystem.t_employee_position
+        where pk_pid = #{pkPid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TEmployeePositionMap">
+        select
+          pk_pid, name, saraly, fk_did
+        from d_PersonnelManagementSystem.t_employee_position
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TEmployeePositionMap">
+        select
+          pk_pid, name, saraly, fk_did
+        from d_PersonnelManagementSystem.t_employee_position
+        <where>
+            <if test="pkPid != null">
+                and pk_pid = #{pkPid}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="saraly != null">
+                and saraly = #{saraly}
+            </if>
+            <if test="fkDid != null">
+                and fk_did = #{fkDid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="pkPid" useGeneratedKeys="true">
+        insert into d_PersonnelManagementSystem.t_employee_position(name, saraly, fk_did)
+        values (#{name}, #{saraly}, #{fkDid})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update d_PersonnelManagementSystem.t_employee_position
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="saraly != null">
+                saraly = #{saraly},
+            </if>
+            <if test="fkDid != null">
+                fk_did = #{fkDid},
+            </if>
+        </set>
+        where pk_pid = #{pkPid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from d_PersonnelManagementSystem.t_employee_position where pk_pid = #{pkPid}
+    </delete>
+
+</mapper>

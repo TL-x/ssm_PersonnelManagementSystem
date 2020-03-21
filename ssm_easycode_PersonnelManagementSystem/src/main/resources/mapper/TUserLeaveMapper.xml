@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csqf.personnelmanagementsystem.dao.TUserLeaveDao">
+
+    <resultMap type="com.csqf.personnelmanagementsystem.entity.TUserLeave" id="TUserLeaveMap">
+        <result property="pkLid" column="pk_lid" jdbcType="INTEGER"/>
+        <result property="proposer" column="proposer" jdbcType="VARCHAR"/>
+        <result property="fkProposerid" column="fk_proposerid" jdbcType="INTEGER"/>
+        <result property="fkVerifierid" column="fk_verifierid" jdbcType="INTEGER"/>
+        <result property="start" column="start" jdbcType="TIMESTAMP"/>
+        <result property="end" column="end" jdbcType="TIMESTAMP"/>
+        <result property="reason" column="reason" jdbcType="VARCHAR"/>
+        <result property="fkLtid" column="fk_ltid" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TUserLeaveMap">
+        select
+          pk_lid, proposer, fk_proposerid, fk_verifierid, start, end, reason, fk_ltid
+        from d_PersonnelManagementSystem.t_user_leave
+        where pk_lid = #{pkLid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TUserLeaveMap">
+        select
+          pk_lid, proposer, fk_proposerid, fk_verifierid, start, end, reason, fk_ltid
+        from d_PersonnelManagementSystem.t_user_leave
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TUserLeaveMap">
+        select
+          pk_lid, proposer, fk_proposerid, fk_verifierid, start, end, reason, fk_ltid
+        from d_PersonnelManagementSystem.t_user_leave
+        <where>
+            <if test="pkLid != null">
+                and pk_lid = #{pkLid}
+            </if>
+            <if test="proposer != null and proposer != ''">
+                and proposer = #{proposer}
+            </if>
+            <if test="fkProposerid != null">
+                and fk_proposerid = #{fkProposerid}
+            </if>
+            <if test="fkVerifierid != null">
+                and fk_verifierid = #{fkVerifierid}
+            </if>
+            <if test="start != null">
+                and start = #{start}
+            </if>
+            <if test="end != null">
+                and end = #{end}
+            </if>
+            <if test="reason != null and reason != ''">
+                and reason = #{reason}
+            </if>
+            <if test="fkLtid != null">
+                and fk_ltid = #{fkLtid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="pkLid" useGeneratedKeys="true">
+        insert into d_PersonnelManagementSystem.t_user_leave(proposer, fk_proposerid, fk_verifierid, start, end, reason, fk_ltid)
+        values (#{proposer}, #{fkProposerid}, #{fkVerifierid}, #{start}, #{end}, #{reason}, #{fkLtid})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update d_PersonnelManagementSystem.t_user_leave
+        <set>
+            <if test="proposer != null and proposer != ''">
+                proposer = #{proposer},
+            </if>
+            <if test="fkProposerid != null">
+                fk_proposerid = #{fkProposerid},
+            </if>
+            <if test="fkVerifierid != null">
+                fk_verifierid = #{fkVerifierid},
+            </if>
+            <if test="start != null">
+                start = #{start},
+            </if>
+            <if test="end != null">
+                end = #{end},
+            </if>
+            <if test="reason != null and reason != ''">
+                reason = #{reason},
+            </if>
+            <if test="fkLtid != null">
+                fk_ltid = #{fkLtid},
+            </if>
+        </set>
+        where pk_lid = #{pkLid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from d_PersonnelManagementSystem.t_user_leave where pk_lid = #{pkLid}
+    </delete>
+
+</mapper>
