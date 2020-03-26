@@ -5,14 +5,14 @@
     <resultMap type="com.csqf.personnelmanagementsystem.entity.TEmployeePosition" id="TEmployeePositionMap">
         <result property="pkPid" column="pk_pid" jdbcType="INTEGER"/>
         <result property="name" column="name" jdbcType="VARCHAR"/>
-        <result property="saraly" column="saraly" jdbcType="OTHER"/>
+        <result property="salary" column="salary" jdbcType="OTHER"/>
         <result property="fkDid" column="fk_did" jdbcType="INTEGER"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="TEmployeePositionMap">
         select
-          pk_pid, name, saraly, fk_did
+          pk_pid, name, salary, fk_did
         from d_PersonnelManagementSystem.t_employee_position
         where pk_pid = #{pkPid}
     </select>
@@ -20,7 +20,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TEmployeePositionMap">
         select
-          pk_pid, name, saraly, fk_did
+          pk_pid, name, salary, fk_did
         from d_PersonnelManagementSystem.t_employee_position
         limit #{offset}, #{limit}
     </select>
@@ -28,7 +28,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="TEmployeePositionMap">
         select
-          pk_pid, name, saraly, fk_did
+          pk_pid, name, salary, fk_did
         from d_PersonnelManagementSystem.t_employee_position
         <where>
             <if test="pkPid != null">
@@ -37,8 +37,8 @@
             <if test="name != null and name != ''">
                 and name = #{name}
             </if>
-            <if test="saraly != null">
-                and saraly = #{saraly}
+            <if test="salary != null">
+                and salary = #{salary}
             </if>
             <if test="fkDid != null">
                 and fk_did = #{fkDid}
@@ -48,8 +48,8 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="pkPid" useGeneratedKeys="true">
-        insert into d_PersonnelManagementSystem.t_employee_position(name, saraly, fk_did)
-        values (#{name}, #{saraly}, #{fkDid})
+        insert into d_PersonnelManagementSystem.t_employee_position(name, salary, fk_did)
+        values (#{name}, #{salary}, #{fkDid})
     </insert>
 
     <!--通过主键修改数据-->
@@ -59,8 +59,8 @@
             <if test="name != null and name != ''">
                 name = #{name},
             </if>
-            <if test="saraly != null">
-                saraly = #{saraly},
+            <if test="salary != null">
+                salary = #{salary},
             </if>
             <if test="fkDid != null">
                 fk_did = #{fkDid},

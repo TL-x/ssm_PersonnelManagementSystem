@@ -7,14 +7,15 @@
         <result property="fkPid" column="fk_pid" jdbcType="INTEGER"/>
         <result property="fkAid" column="fk_aid" jdbcType="INTEGER"/>
         <result property="jointime" column="jointime" jdbcType="TIMESTAMP"/>
-        <result property="training" column="training" jdbcType="VARCHAR"/>
         <result property="boss" column="boss" jdbcType="INTEGER"/>
+        <result property="fkEtid" column="fk_etid" jdbcType="INTEGER"/>
+        <result property="positivedates" column="Positivedates" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="TEmployeeInfomationMap">
         select
-          pk_eid, fk_pid, fk_aid, jointime, training, boss
+          pk_eid, fk_pid, fk_aid, jointime, boss, fk_etid, Positivedates
         from d_PersonnelManagementSystem.t_employee_infomation
         where pk_eid = #{pkEid}
     </select>
@@ -22,7 +23,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TEmployeeInfomationMap">
         select
-          pk_eid, fk_pid, fk_aid, jointime, training, boss
+          pk_eid, fk_pid, fk_aid, jointime, boss, fk_etid, Positivedates
         from d_PersonnelManagementSystem.t_employee_infomation
         limit #{offset}, #{limit}
     </select>
@@ -30,7 +31,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="TEmployeeInfomationMap">
         select
-          pk_eid, fk_pid, fk_aid, jointime, training, boss
+          pk_eid, fk_pid, fk_aid, jointime, boss, fk_etid, Positivedates
         from d_PersonnelManagementSystem.t_employee_infomation
         <where>
             <if test="pkEid != null">
@@ -45,19 +46,22 @@
             <if test="jointime != null">
                 and jointime = #{jointime}
             </if>
-            <if test="training != null and training != ''">
-                and training = #{training}
-            </if>
             <if test="boss != null">
                 and boss = #{boss}
+            </if>
+            <if test="fkEtid != null">
+                and fk_etid = #{fkEtid}
+            </if>
+            <if test="positivedates != null">
+                and Positivedates = #{positivedates}
             </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="pkEid" useGeneratedKeys="true">
-        insert into d_PersonnelManagementSystem.t_employee_infomation(fk_pid, fk_aid, jointime, training, boss)
-        values (#{fkPid}, #{fkAid}, #{jointime}, #{training}, #{boss})
+        insert into d_PersonnelManagementSystem.t_employee_infomation(fk_pid, fk_aid, jointime, boss, fk_etid, Positivedates)
+        values (#{fkPid}, #{fkAid}, #{jointime}, #{boss}, #{fkEtid}, #{positivedates})
     </insert>
 
     <!--通过主键修改数据-->
@@ -73,11 +77,14 @@
             <if test="jointime != null">
                 jointime = #{jointime},
             </if>
-            <if test="training != null and training != ''">
-                training = #{training},
-            </if>
             <if test="boss != null">
                 boss = #{boss},
+            </if>
+            <if test="fkEtid != null">
+                fk_etid = #{fkEtid},
+            </if>
+            <if test="positivedates != null">
+                Positivedates = #{positivedates},
             </if>
         </set>
         where pk_eid = #{pkEid}

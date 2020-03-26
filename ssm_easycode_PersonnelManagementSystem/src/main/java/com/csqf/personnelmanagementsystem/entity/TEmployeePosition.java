@@ -6,16 +6,16 @@ import java.io.Serializable;
  * (TEmployeePosition)实体类
  *
  * @author makejava
- * @since 2020-03-21 16:18:57
+ * @since 2020-03-25 21:34:01
  */
 public class TEmployeePosition implements Serializable {
-    private static final long serialVersionUID = -87139216419751544L;
+    private static final long serialVersionUID = 882207540685316842L;
     
     private Integer pkPid;
     
     private String name;
     
-    private Object saraly;
+    private Object salary;
     
     private Integer fkDid;
 
@@ -36,12 +36,12 @@ public class TEmployeePosition implements Serializable {
         this.name = name;
     }
 
-    public Object getSaraly() {
-        return saraly;
+    public Object getSalary() {
+        return salary;
     }
 
-    public void setSaraly(Object saraly) {
-        this.saraly = saraly;
+    public void setSalary(Object salary) {
+        this.salary = salary;
     }
 
     public Integer getFkDid() {

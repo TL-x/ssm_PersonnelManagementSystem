@@ -5,18 +5,18 @@
     <resultMap type="com.csqf.personnelmanagementsystem.entity.TUserLeave" id="TUserLeaveMap">
         <result property="pkLid" column="pk_lid" jdbcType="INTEGER"/>
         <result property="proposer" column="proposer" jdbcType="VARCHAR"/>
-        <result property="fkProposerid" column="fk_proposerid" jdbcType="INTEGER"/>
         <result property="fkVerifierid" column="fk_verifierid" jdbcType="INTEGER"/>
         <result property="start" column="start" jdbcType="TIMESTAMP"/>
         <result property="end" column="end" jdbcType="TIMESTAMP"/>
         <result property="reason" column="reason" jdbcType="VARCHAR"/>
         <result property="fkLtid" column="fk_ltid" jdbcType="INTEGER"/>
+        <result property="fkProposerid" column="fk_Proposerid" jdbcType="INTEGER"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="TUserLeaveMap">
         select
-          pk_lid, proposer, fk_proposerid, fk_verifierid, start, end, reason, fk_ltid
+          pk_lid, proposer, fk_verifierid, start, end, reason, fk_ltid, fk_Proposerid
         from d_PersonnelManagementSystem.t_user_leave
         where pk_lid = #{pkLid}
     </select>
@@ -24,7 +24,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TUserLeaveMap">
         select
-          pk_lid, proposer, fk_proposerid, fk_verifierid, start, end, reason, fk_ltid
+          pk_lid, proposer, fk_verifierid, start, end, reason, fk_ltid, fk_Proposerid
         from d_PersonnelManagementSystem.t_user_leave
         limit #{offset}, #{limit}
     </select>
@@ -32,7 +32,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="TUserLeaveMap">
         select
-          pk_lid, proposer, fk_proposerid, fk_verifierid, start, end, reason, fk_ltid
+          pk_lid, proposer, fk_verifierid, start, end, reason, fk_ltid, fk_Proposerid
         from d_PersonnelManagementSystem.t_user_leave
         <where>
             <if test="pkLid != null">
@@ -40,9 +40,6 @@
             </if>
             <if test="proposer != null and proposer != ''">
                 and proposer = #{proposer}
-            </if>
-            <if test="fkProposerid != null">
-                and fk_proposerid = #{fkProposerid}
             </if>
             <if test="fkVerifierid != null">
                 and fk_verifierid = #{fkVerifierid}
@@ -59,13 +56,16 @@
             <if test="fkLtid != null">
                 and fk_ltid = #{fkLtid}
             </if>
+            <if test="fkProposerid != null">
+                and fk_Proposerid = #{fkProposerid}
+            </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="pkLid" useGeneratedKeys="true">
-        insert into d_PersonnelManagementSystem.t_user_leave(proposer, fk_proposerid, fk_verifierid, start, end, reason, fk_ltid)
-        values (#{proposer}, #{fkProposerid}, #{fkVerifierid}, #{start}, #{end}, #{reason}, #{fkLtid})
+        insert into d_PersonnelManagementSystem.t_user_leave(proposer, fk_verifierid, start, end, reason, fk_ltid, fk_Proposerid)
+        values (#{proposer}, #{fkVerifierid}, #{start}, #{end}, #{reason}, #{fkLtid}, #{fkProposerid})
     </insert>
 
     <!--通过主键修改数据-->
@@ -74,9 +74,6 @@
         <set>
             <if test="proposer != null and proposer != ''">
                 proposer = #{proposer},
-            </if>
-            <if test="fkProposerid != null">
-                fk_proposerid = #{fkProposerid},
             </if>
             <if test="fkVerifierid != null">
                 fk_verifierid = #{fkVerifierid},
@@ -92,6 +89,9 @@
             </if>
             <if test="fkLtid != null">
                 fk_ltid = #{fkLtid},
+            </if>
+            <if test="fkProposerid != null">
+                fk_Proposerid = #{fkProposerid},
             </if>
         </set>
         where pk_lid = #{pkLid}

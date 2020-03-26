@@ -1,6 +1,6 @@
 package com.csqf.personnelmanagementsystem.interceptor;
 
-import com.csqf.personnelmanagementsystem.entity.TUserInformation;
+import com.csqf.personnelmanagementsystem.entity.TUserInfomation;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,7 +18,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
         System.out.println("该页面检测session");
-        TUserInformation user = (TUserInformation)httpServletRequest.getSession().getAttribute("user");
+        TUserInfomation user = (TUserInfomation)httpServletRequest.getSession().getAttribute("user");
         if (null == user){
             httpServletResponse.sendRedirect(httpServletRequest.getContextPath()+"/userindex");
             return false;

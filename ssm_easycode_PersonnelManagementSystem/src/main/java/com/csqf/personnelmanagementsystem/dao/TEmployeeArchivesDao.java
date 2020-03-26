@@ -8,7 +8,7 @@ import java.util.List;
  * 员工档案(TEmployeeArchives)表数据库访问层
  *
  * @author makejava
- * @since 2020-03-21 21:12:44
+ * @since 2020-03-25 21:29:22
  */
 public interface TEmployeeArchivesDao {
 

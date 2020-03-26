@@ -1,10 +1,10 @@
 <%@ page import="com.csqf.personnelmanagementsystem.entity.TUserInformation" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%
-	TUserInformation user = (TUserInformation)request.getSession().getAttribute("user");
+<%--<%--%>
+<%--	TUserInformation user = (TUserInformation)request.getSession().getAttribute("user");--%>
 
-%>
+<%--%>--%>
 <html>
 <head>
 	<meta charset="utf-8" />
@@ -55,7 +55,8 @@
 			<a href="javascript:void(0)">登出</a>
 		</div>
 		<div id="div2">
-			<a href="javascript:void(0)"><%= user==null?null:user.getUsername()%></a>
+<%--			<a href="javascript:void(0)"><%= user==null?null:user.getUsername()%></a>--%>
+			<a href="javascript:void(0)">${user.username}</a>
 		</div>
 	</div>
 </body>

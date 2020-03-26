@@ -7,16 +7,14 @@ import java.io.Serializable;
  * (TUserLeave)实体类
  *
  * @author makejava
- * @since 2020-03-21 16:32:45
+ * @since 2020-03-25 21:36:41
  */
 public class TUserLeave implements Serializable {
-    private static final long serialVersionUID = -89012261061804893L;
+    private static final long serialVersionUID = -26469193429613304L;
     
     private Integer pkLid;
     
     private String proposer;
-    
-    private Integer fkProposerid;
     
     private Integer fkVerifierid;
     
@@ -27,6 +25,8 @@ public class TUserLeave implements Serializable {
     private String reason;
     
     private Integer fkLtid;
+    
+    private Integer fkProposerid;
 
 
     public Integer getPkLid() {
@@ -43,14 +43,6 @@ public class TUserLeave implements Serializable {
 
     public void setProposer(String proposer) {
         this.proposer = proposer;
-    }
-
-    public Integer getFkProposerid() {
-        return fkProposerid;
-    }
-
-    public void setFkProposerid(Integer fkProposerid) {
-        this.fkProposerid = fkProposerid;
     }
 
     public Integer getFkVerifierid() {
@@ -91,6 +83,14 @@ public class TUserLeave implements Serializable {
 
     public void setFkLtid(Integer fkLtid) {
         this.fkLtid = fkLtid;
+    }
+
+    public Integer getFkProposerid() {
+        return fkProposerid;
+    }
+
+    public void setFkProposerid(Integer fkProposerid) {
+        this.fkProposerid = fkProposerid;
     }
 
 }

@@ -6,10 +6,10 @@ import java.io.Serializable;
  * 员工档案(TEmployeeArchives)实体类
  *
  * @author makejava
- * @since 2020-03-21 21:12:42
+ * @since 2020-03-25 21:29:22
  */
 public class TEmployeeArchives implements Serializable {
-    private static final long serialVersionUID = -41963061673064579L;
+    private static final long serialVersionUID = 877253088825984522L;
     
     private Integer pkAid;
     
@@ -46,18 +46,6 @@ public class TEmployeeArchives implements Serializable {
     * 专业
     */
     private String major;
-    /**
-    * 紧急联系人姓名
-    */
-    private String linkmanname;
-    /**
-    * 紧急联系人电话
-    */
-    private Integer linkmantel;
-    /**
-    * 紧急联系人关系
-    */
-    private String linkmanrelation;
 
 
     public Integer getPkAid() {
@@ -162,30 +150,6 @@ public class TEmployeeArchives implements Serializable {
 
     public void setMajor(String major) {
         this.major = major;
-    }
-
-    public String getLinkmanname() {
-        return linkmanname;
-    }
-
-    public void setLinkmanname(String linkmanname) {
-        this.linkmanname = linkmanname;
-    }
-
-    public Integer getLinkmantel() {
-        return linkmantel;
-    }
-
-    public void setLinkmantel(Integer linkmantel) {
-        this.linkmantel = linkmantel;
-    }
-
-    public String getLinkmanrelation() {
-        return linkmanrelation;
-    }
-
-    public void setLinkmanrelation(String linkmanrelation) {
-        this.linkmanrelation = linkmanrelation;
     }
 
 }

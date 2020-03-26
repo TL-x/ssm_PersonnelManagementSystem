@@ -30,14 +30,21 @@
     "custom" : false,
     "ext" : { }
   }, {
-    "name" : "training",
+    "name" : "boss",
     "comment" : null,
     "type" : null,
     "shortType" : null,
     "custom" : false,
     "ext" : { }
   }, {
-    "name" : "boss",
+    "name" : "fkEtid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "positivedates",
     "comment" : null,
     "type" : null,
     "shortType" : null,

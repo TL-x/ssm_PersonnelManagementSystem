@@ -92,27 +92,6 @@
     "shortType" : null,
     "custom" : false,
     "ext" : { }
-  }, {
-    "name" : "linkmanname",
-    "comment" : null,
-    "type" : null,
-    "shortType" : null,
-    "custom" : false,
-    "ext" : { }
-  }, {
-    "name" : "linkmantel",
-    "comment" : null,
-    "type" : null,
-    "shortType" : null,
-    "custom" : false,
-    "ext" : { }
-  }, {
-    "name" : "linkmanrelation",
-    "comment" : null,
-    "type" : null,
-    "shortType" : null,
-    "custom" : false,
-    "ext" : { }
   } ],
   "pkColumn" : null,
   "otherColumn" : null,

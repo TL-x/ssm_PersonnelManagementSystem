@@ -9,22 +9,19 @@
         <result property="sex" column="sex" jdbcType="VARCHAR"/>
         <result property="img" column="img" jdbcType="VARCHAR"/>
         <result property="idcard" column="idcard" jdbcType="VARCHAR"/>
-        <result property="nativePlace" column="native place" jdbcType="VARCHAR"/>
-        <result property="politicsStatus" column="politics status" jdbcType="VARCHAR"/>
+        <result property="nativeplace" column="nativePlace" jdbcType="VARCHAR"/>
+        <result property="politicsstatus" column="politicsStatus" jdbcType="VARCHAR"/>
         <result property="tel" column="tel" jdbcType="INTEGER"/>
         <result property="email" column="eMail" jdbcType="VARCHAR"/>
         <result property="education" column="education" jdbcType="VARCHAR"/>
         <result property="university" column="university" jdbcType="VARCHAR"/>
         <result property="major" column="major" jdbcType="VARCHAR"/>
-        <result property="linkmanname" column="linkmanname" jdbcType="VARCHAR"/>
-        <result property="linkmantel" column="linkmantel" jdbcType="INTEGER"/>
-        <result property="linkmanrelation" column="linkmanRelation" jdbcType="VARCHAR"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="TEmployeeArchivesMap">
         select
-          pk_aid, name, age, sex, img, idcard, native place, politics status, tel, eMail, education, university, major, linkmanname, linkmantel, linkmanRelation
+          pk_aid, name, age, sex, img, idcard, nativePlace, politicsStatus, tel, eMail, education, university, major
         from d_PersonnelManagementSystem.t_employee_archives
         where pk_aid = #{pkAid}
     </select>
@@ -32,7 +29,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="TEmployeeArchivesMap">
         select
-          pk_aid, name, age, sex, img, idcard, native place, politics status, tel, eMail, education, university, major, linkmanname, linkmantel, linkmanRelation
+          pk_aid, name, age, sex, img, idcard, nativePlace, politicsStatus, tel, eMail, education, university, major
         from d_PersonnelManagementSystem.t_employee_archives
         limit #{offset}, #{limit}
     </select>
@@ -40,7 +37,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="TEmployeeArchivesMap">
         select
-          pk_aid, name, age, sex, img, idcard, native place, politics status, tel, eMail, education, university, major, linkmanname, linkmantel, linkmanRelation
+          pk_aid, name, age, sex, img, idcard, nativePlace, politicsStatus, tel, eMail, education, university, major
         from d_PersonnelManagementSystem.t_employee_archives
         <where>
             <if test="pkAid != null">
@@ -61,11 +58,11 @@
             <if test="idcard != null and idcard != ''">
                 and idcard = #{idcard}
             </if>
-            <if test="native place != null and native place != ''">
-                and native place = #{native place}
+            <if test="nativeplace != null and nativeplace != ''">
+                and nativePlace = #{nativeplace}
             </if>
-            <if test="politics status != null and politics status != ''">
-                and politics status = #{politics status}
+            <if test="politicsstatus != null and politicsstatus != ''">
+                and politicsStatus = #{politicsstatus}
             </if>
             <if test="tel != null">
                 and tel = #{tel}
@@ -82,22 +79,13 @@
             <if test="major != null and major != ''">
                 and major = #{major}
             </if>
-            <if test="linkmanname != null and linkmanname != ''">
-                and linkmanname = #{linkmanname}
-            </if>
-            <if test="linkmantel != null">
-                and linkmantel = #{linkmantel}
-            </if>
-            <if test="linkmanrelation != null and linkmanrelation != ''">
-                and linkmanRelation = #{linkmanrelation}
-            </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="pkAid" useGeneratedKeys="true">
-        insert into d_PersonnelManagementSystem.t_employee_archives(name, age, sex, img, idcard, native place, politics status, tel, eMail, education, university, major, linkmanname, linkmantel, linkmanRelation)
-        values (#{name}, #{age}, #{sex}, #{img}, #{idcard}, #{native place}, #{politics status}, #{tel}, #{email}, #{education}, #{university}, #{major}, #{linkmanname}, #{linkmantel}, #{linkmanrelation})
+        insert into d_PersonnelManagementSystem.t_employee_archives(name, age, sex, img, idcard, nativePlace, politicsStatus, tel, eMail, education, university, major)
+        values (#{name}, #{age}, #{sex}, #{img}, #{idcard}, #{nativeplace}, #{politicsstatus}, #{tel}, #{email}, #{education}, #{university}, #{major})
     </insert>
 
     <!--通过主键修改数据-->
@@ -119,11 +107,11 @@
             <if test="idcard != null and idcard != ''">
                 idcard = #{idcard},
             </if>
-            <if test="native place != null and native place != ''">
-                native place = #{native place},
+            <if test="nativeplace != null and nativeplace != ''">
+                nativePlace = #{nativeplace},
             </if>
-            <if test="politics status != null and politics status != ''">
-                politics status = #{politics status},
+            <if test="politicsstatus != null and politicsstatus != ''">
+                politicsStatus = #{politicsstatus},
             </if>
             <if test="tel != null">
                 tel = #{tel},
@@ -139,15 +127,6 @@
             </if>
             <if test="major != null and major != ''">
                 major = #{major},
-            </if>
-            <if test="linkmanname != null and linkmanname != ''">
-                linkmanname = #{linkmanname},
-            </if>
-            <if test="linkmantel != null">
-                linkmantel = #{linkmantel},
-            </if>
-            <if test="linkmanrelation != null and linkmanrelation != ''">
-                linkmanRelation = #{linkmanrelation},
             </if>
         </set>
         where pk_aid = #{pkAid}

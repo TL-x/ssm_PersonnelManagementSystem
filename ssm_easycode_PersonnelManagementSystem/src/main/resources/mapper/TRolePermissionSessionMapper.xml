@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csqf.personnelmanagementsystem.dao.TRolePermissionSessionDao">
+
+    <resultMap type="com.csqf.personnelmanagementsystem.entity.TRolePermissionSession" id="TRolePermissionSessionMap">
+        <result property="pkRoid" column="pk_roid" jdbcType="INTEGER"/>
+        <result property="pkPerid" column="pk_perid" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TRolePermissionSessionMap">
+        select
+          pk_roid, pk_perid
+        from d_PersonnelManagementSystem.t_role_permission_session
+        where pk_roid = #{pkRoid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TRolePermissionSessionMap">
+        select
+          pk_roid, pk_perid
+        from d_PersonnelManagementSystem.t_role_permission_session
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TRolePermissionSessionMap">
+        select
+          pk_roid, pk_perid
+        from d_PersonnelManagementSystem.t_role_permission_session
+        <where>
+            <if test="pkRoid != null">
+                and pk_roid = #{pkRoid}
+            </if>
+            <if test="pkPerid != null">
+                and pk_perid = #{pkPerid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="pkRoid" useGeneratedKeys="true">
+        insert into d_PersonnelManagementSystem.t_role_permission_session()
+        values ()
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update d_PersonnelManagementSystem.t_role_permission_session
+        <set>
+        </set>
+        where pk_roid = #{pkRoid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from d_PersonnelManagementSystem.t_role_permission_session where pk_roid = #{pkRoid}
+    </delete>
+
+</mapper>

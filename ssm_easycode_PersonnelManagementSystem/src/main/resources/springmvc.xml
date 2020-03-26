@@ -40,4 +40,8 @@
 <!--            <bean class="com.csqf.personnelmanagementsystem.interceptor.LoginInterceptor" />-->
 <!--        </mvc:interceptor>-->
 <!--    </mvc:interceptors>-->
+<!--    <mvc:resources location="/js/" mapping="/js/**"></mvc:resources>-->
+<!--    <mvc:resources location="/images/" mapping="/images/**"></mvc:resources>-->
+<!--    <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>-->
+<!--    <mvc:resources location="/vendors/" mapping="/vendors/**"></mvc:resources>-->
 </beans>

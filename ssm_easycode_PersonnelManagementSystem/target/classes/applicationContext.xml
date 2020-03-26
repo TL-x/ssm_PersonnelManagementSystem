@@ -55,9 +55,9 @@
 <!--    事务，在后面的aop配置中时以下的方法配置事务-->
     <tx:advice id="txAdvice" transaction-manager="txManage">
         <tx:attributes>
-            <tx:method name="list*"/>
-            <tx:method name="modify*"/>
-            <tx:method name="add*" />
+            <tx:method name="query*"/>
+            <tx:method name="insert*"/>
+            <tx:method name="update*" />
             <tx:method name="delete*" />
         </tx:attributes>
     </tx:advice>

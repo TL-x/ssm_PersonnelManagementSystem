@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csqf.personnelmanagementsystem.dao.TUserRoleSessionDao">
+
+    <resultMap type="com.csqf.personnelmanagementsystem.entity.TUserRoleSession" id="TUserRoleSessionMap">
+        <result property="pkUid" column="pk_uid" jdbcType="INTEGER"/>
+        <result property="pkRoid" column="pk_roid" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TUserRoleSessionMap">
+        select
+          pk_uid, pk_roid
+        from d_PersonnelManagementSystem.t_user_role_session
+        where pk_uid = #{pkUid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TUserRoleSessionMap">
+        select
+          pk_uid, pk_roid
+        from d_PersonnelManagementSystem.t_user_role_session
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TUserRoleSessionMap">
+        select
+          pk_uid, pk_roid
+        from d_PersonnelManagementSystem.t_user_role_session
+        <where>
+            <if test="pkUid != null">
+                and pk_uid = #{pkUid}
+            </if>
+            <if test="pkRoid != null">
+                and pk_roid = #{pkRoid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="pkUid" useGeneratedKeys="true">
+        insert into d_PersonnelManagementSystem.t_user_role_session()
+        values ()
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update d_PersonnelManagementSystem.t_user_role_session
+        <set>
+        </set>
+        where pk_uid = #{pkUid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from d_PersonnelManagementSystem.t_user_role_session where pk_uid = #{pkUid}
+    </delete>
+
+</mapper>

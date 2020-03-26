@@ -16,13 +16,6 @@
     "custom" : false,
     "ext" : { }
   }, {
-    "name" : "fkProposerid",
-    "comment" : null,
-    "type" : null,
-    "shortType" : null,
-    "custom" : false,
-    "ext" : { }
-  }, {
     "name" : "fkVerifierid",
     "comment" : null,
     "type" : null,
@@ -52,6 +45,13 @@
     "ext" : { }
   }, {
     "name" : "fkLtid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "fkProposerid",
     "comment" : null,
     "type" : null,
     "shortType" : null,

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csqf.personnelmanagementsystem.dao.TEmployeeSalaryDao">
+
+    <resultMap type="com.csqf.personnelmanagementsystem.entity.TEmployeeSalary" id="TEmployeeSalaryMap">
+        <result property="pkEsid" column="pk_esid" jdbcType="INTEGER"/>
+        <result property="salary" column="salary" jdbcType="OTHER"/>
+        <result property="month" column="month" jdbcType="VARCHAR"/>
+        <result property="fkEid" column="fk_eid" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TEmployeeSalaryMap">
+        select
+          pk_esid, salary, month, fk_eid
+        from d_PersonnelManagementSystem.t_employee_salary
+        where pk_esid = #{pkEsid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TEmployeeSalaryMap">
+        select
+          pk_esid, salary, month, fk_eid
+        from d_PersonnelManagementSystem.t_employee_salary
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="TEmployeeSalaryMap">
+        select
+          pk_esid, salary, month, fk_eid
+        from d_PersonnelManagementSystem.t_employee_salary
+        <where>
+            <if test="pkEsid != null">
+                and pk_esid = #{pkEsid}
+            </if>
+            <if test="salary != null">
+                and salary = #{salary}
+            </if>
+            <if test="month != null and month != ''">
+                and month = #{month}
+            </if>
+            <if test="fkEid != null">
+                and fk_eid = #{fkEid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="pkEsid" useGeneratedKeys="true">
+        insert into d_PersonnelManagementSystem.t_employee_salary(salary, month, fk_eid)
+        values (#{salary}, #{month}, #{fkEid})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update d_PersonnelManagementSystem.t_employee_salary
+        <set>
+            <if test="salary != null">
+                salary = #{salary},
+            </if>
+            <if test="month != null and month != ''">
+                month = #{month},
+            </if>
+            <if test="fkEid != null">
+                fk_eid = #{fkEid},
+            </if>
+        </set>
+        where pk_esid = #{pkEsid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from d_PersonnelManagementSystem.t_employee_salary where pk_esid = #{pkEsid}
+    </delete>
+
+</mapper>

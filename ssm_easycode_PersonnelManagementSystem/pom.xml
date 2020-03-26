@@ -112,7 +112,7 @@
                 <version>2.2</version>
                 <configuration>
                     <!-- 控制tomcat端口号 -->
-                    <port>8613</port>
+                    <port>8713</port>
                     <!-- 项目发布到tomcat后的名称 -->
                     <!-- / 相当于把项目发布名称为ROOT -->
                     <!-- /abc -->

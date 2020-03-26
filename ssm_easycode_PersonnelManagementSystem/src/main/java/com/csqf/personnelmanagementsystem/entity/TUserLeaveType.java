@@ -6,10 +6,10 @@ import java.io.Serializable;
  * (TUserLeaveType)实体类
  *
  * @author makejava
- * @since 2020-03-21 16:32:57
+ * @since 2020-03-25 21:37:03
  */
 public class TUserLeaveType implements Serializable {
-    private static final long serialVersionUID = -17451621283891479L;
+    private static final long serialVersionUID = 490173720879703695L;
     
     private Integer pkTid;
     
