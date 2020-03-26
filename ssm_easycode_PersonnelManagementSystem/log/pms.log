@@ -10,3 +10,6 @@ com.csqf.personnelmanagementsystem.dao.TUserInfomationDao.queryUserByUser <==   
 com.csqf.personnelmanagementsystem.dao.TUserInfomationDao.queryUserByUser ==>  Preparing: select * from t_user_infomation where username = ? and password = ?  org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:139) 
 com.csqf.personnelmanagementsystem.dao.TUserInfomationDao.queryUserByUser ==> Parameters: xu(String), 123(String) org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:139) 
 com.csqf.personnelmanagementsystem.dao.TUserInfomationDao.queryUserByUser <==      Total: 1 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:139) 
+com.csqf.personnelmanagementsystem.dao.TUserInfomationDao.queryUserByUser ==>  Preparing: select * from t_user_infomation where username = ? and password = ?  org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:139) 
+com.csqf.personnelmanagementsystem.dao.TUserInfomationDao.queryUserByUser ==> Parameters: xu(String), 123(String) org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:139) 
+com.csqf.personnelmanagementsystem.dao.TUserInfomationDao.queryUserByUser <==      Total: 1 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:139) 
