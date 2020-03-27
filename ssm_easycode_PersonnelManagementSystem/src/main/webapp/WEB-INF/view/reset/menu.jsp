@@ -21,9 +21,45 @@
     <link rel="stylesheet" href="/css/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="/images/favicon.png" />
+    <script type="text/javascript">
+        // 检验密码是否输入一致
+
+        function VerifyCmrPwd() {
+
+            var myValue = document.getElementById("exampleInputPassword2").value;
+            var firValue = document.getElementById("exampleInputPassword1").value;
+            var spanJ = document.getElementById("pwdSpan");
+            var flag = (myValue == firValue);
+            if (myValue != "" && myValue != null) {
+                if (flag) {
+                    spanJ.innerHTML = "密码输入一致".fontcolor("green");
+                    return true;
+                } else {
+                    spanJ.innerHTML = "*密码输入不一致".fontcolor("red");
+                }
+            } else {
+                spanJ.innerHTML = "*输入不能为空".fontcolor("red");
+            }
+        }
+        function doUpdateUserSubmit(){
+            if(!confirm("是否修改？")){
+                window.event.returnValue = false;
+            }
+        }
+        function doAddUserSubmit(){
+            if(!confirm("是否确定？")){
+                window.event.returnValue = false;
+            }
+        }
+        function doSignOut() {
+            if(!confirm("是否退出？")){
+                window.event.returnValue = false;
+            }
+        }
+    </script>
 </head>
 <body>
-<div class="container-scroller">
+<%--<div class="container-scroller">--%>
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex justify-content-center">
@@ -57,7 +93,7 @@
                         <span class="nav-profile-name">${sessionScope.user.username}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                        <a class="dropdown-item">
+                        <a class="dropdown-item" onclick="doSignOut()" href="/signout">
                             <i class="mdi mdi-logout text-primary"></i>
                             Logout
                         </a>
@@ -91,8 +127,8 @@
                 </a>
                 <div class="collapse" id="auth">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="/userInfomation">用户信息</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="/userInfomation">新增用户</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="/modifyUser">用户信息</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="/addUser">新增用户</a></li>
                     </ul>
                 </div>
             </li>
@@ -158,25 +194,25 @@
             </li>
         </ul>
     </nav>
-</div>
+<%--</div>--%>
 </body>
 <!-- plugins:js -->
-<script src="/vendors/base/vendor.bundle.base.js"></script>
+<%--<script src="/vendors/base/vendor.bundle.base.js"></script>--%>
 <!-- endinject -->
 <!-- Plugin js for this page-->
-<script src="/vendors/chart.js/Chart.min.js"></script>
-<script src="/vendors/datatables.net/jquery.dataTables.js"></script>
-<script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+<%--<script src="/vendors/chart.js/Chart.min.js"></script>--%>
+<%--<script src="/vendors/datatables.net/jquery.dataTables.js"></script>--%>
+<%--<script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>--%>
 <!-- End plugin js for this page-->
 <!-- inject:js -->
-<script src="/js/off-canvas.js"></script>
-<script src="/js/hoverable-collapse.js"></script>
-<script src="/js/template.js"></script>
+<%--<script src="/js/off-canvas.js"></script>--%>
+<%--<script src="/js/hoverable-collapse.js"></script>--%>
+<%--<script src="/js/template.js"></script>--%>
 <!-- endinject -->
 <!-- Custom js for this page-->
-<script src="/js/dashboard.js"></script>
-<script src="/js/data-table.js"></script>
-<script src="/js/jquery.dataTables.js"></script>
-<script src="/js/dataTables.bootstrap4.js"></script>
+<%--<script src="/js/dashboard.js"></script>--%>
+<%--<script src="/js/data-table.js"></script>--%>
+<%--<script src="/js/jquery.dataTables.js"></script>--%>
+<%--<script src="/js/dataTables.bootstrap4.js"></script>--%>
 <!-- End custom js for this page-->
 </html>

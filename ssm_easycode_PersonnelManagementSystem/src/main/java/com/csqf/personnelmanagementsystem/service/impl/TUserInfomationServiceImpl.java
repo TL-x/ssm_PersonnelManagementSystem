@@ -62,7 +62,10 @@ public class TUserInfomationServiceImpl implements TUserInfomationService {
      */
     @Override
     public TUserInfomation update(TUserInfomation tUserInfomation) {
-        this.tUserInfomationDao.update(tUserInfomation);
+        int isUpdate = this.tUserInfomationDao.update(tUserInfomation);
+        if (1 != isUpdate){
+            return null;
+        }
         return this.queryById(tUserInfomation.getPkUid());
     }
 
